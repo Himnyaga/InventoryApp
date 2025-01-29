@@ -1,4 +1,8 @@
 {
   "name": "InventoryApp",
-  "displayName": "InventoryApp"
+  "displayName": "InventoryApp",
+  "plugins": [
+    "expo-router"
+  ],
+  "scheme": "your-app-scheme"
 }
