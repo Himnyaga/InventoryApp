@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { getProducts } from 'app/src/api/productService';
+import { getLocations } from './locationService';
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
+export const LocationList = () => {
+  const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const productList = await getProducts();
-      setProducts(productList);
+    const fetchLocations = async () => {
+      const locationList = await getLocations();
+      setLocations(locationList);
     };
 
-    fetchProducts();
+    fetchLocations();
   }, []);
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={products}
+        data={locations}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Text style={styles.item}>{item.name} - {item.quantity}</Text>
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductList;
+export default LocationList;

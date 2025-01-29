@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { getProducts } from './components/productService';
-import {ProductModel} from './model/ProductModel';
+import { getInventories } from './InventoryService';
 
-export const ProductList = () => {
-  const [products, setProducts] = useState<Array<ProductModel>>([]);
+export const InventoryList = () => {
+  const [inventories, setInventories] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const productList = await getProducts();
-      setProducts(productList);
+    const fetchInventories = async () => {
+      const inventoryList = await getInventories();
+      setInventories(inventoryList);
     };
 
-    fetchProducts();
+    fetchInventories();
   }, []);
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={products}
+        data={inventorys}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Text style={styles.item}>{item.name} - {item.quantity}</Text>
@@ -40,6 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-export default ProductList;
+export default InventoryList;

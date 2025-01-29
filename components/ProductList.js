@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { getProducts } from './components/productService';
-import {ProductModel} from './model/ProductModel';
+import { getProducts } from './productService';
 
 export const ProductList = () => {
-  const [products, setProducts] = useState<Array<ProductModel>>([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -39,7 +38,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 });
-
-
 
 export default ProductList;
