@@ -4,7 +4,7 @@ import { getProducts } from './components/productService';
 import { ProductModel } from './model/ProductModel';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ProfileScreen from './ProfileScreen';
+import EnregP from './EnregP';
 import { HomeScreen } from './Home';
 
 
@@ -29,7 +29,7 @@ export const ProductList = () => {
           component={HomeScreen}
           options={{ title: 'Welcome' }}
         />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Enregistrer un nouveaux produit" component={EnregP} />
       </Stack.Navigator>
 
       <View style={styles.container}>

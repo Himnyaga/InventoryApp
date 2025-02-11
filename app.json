@@ -2,7 +2,8 @@
   "name": "InventoryApp",
   "displayName": "InventoryApp",
   "plugins": [
-    "expo-router"
+    "expo-router",
+    "expo-sqlite"
   ],
   "scheme": "your-app-scheme"
 }
